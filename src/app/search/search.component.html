@@ -1,0 +1,16 @@
+<!-- TODO: Location icon goes here -->
+<h1>New York</h1>
+
+<div class="search">
+    <label class="category">
+        <div class="text">Search Category</div>
+        <select>
+            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+    </label>
+    <label class="location">
+        <div class="text">Your Location</div>
+        <input type="text" [(ngModel)]="location" placeholder="Location">
+    </label>
+    <button type="button" routerLink="/search-results">Search Now</button>
+</div>

@@ -1,0 +1,116 @@
+.more-cities {
+    display: flex;
+    margin: auto;
+    width: 80%;
+
+    .filters {
+        flex: 1;
+        font-size: 14px;
+
+        label {
+            color: grey;
+            display: block;
+            margin-bottom: 7px;
+
+            .selected {
+                color: #f5c71a;
+            }
+        }
+    }
+
+    .search-results {
+        flex: 5;
+    }
+}
+
+.search-results {
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 30%);
+        justify-content: space-between;
+
+        .product {
+            background: #f7f8fb;
+            margin-bottom: 20px;
+
+            .details {
+                padding: 10px;
+
+                .name {
+                    color: black;
+                    font-size: 14px;
+                    margin: 2px 0;
+                }
+
+                .address {
+                    color: hotpink;
+                    font-size: 10px;
+                    margin: 2px 0;
+                }
+
+                .description {
+                    color: darkgrey;
+                    font-size: 11px;
+                }
+
+                .status {
+                    color: white;
+                    display: inline-block;
+                    font-size: 10px;
+                    padding: 5px 10px;
+
+                    &.closed {
+                        background: #aaa;
+                    }
+
+                    &.open {
+                        background: hotpink;
+                    }
+                }
+            }
+
+            .image {
+                background: lightgrey;
+                position: relative;
+
+                img {
+                    display: block;
+                    min-height: 169px; // based on scaled image at 200px wide
+                    width: 100%;
+                }
+
+                .category {
+                    background: #f5c71a;
+                    color: white;
+                    font-size: 10px;
+                    padding: 8px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    text-transform: uppercase;
+                }
+
+                .rating {
+                    background: hotpink;
+                    border-radius: 40px;
+                    color: white;
+                    font-size: 12px;
+                    height: 40px;
+                    line-height: 40px;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    text-align: center;
+                    width: 40px;
+                }
+            }
+        }
+    }
+
+    .sort {
+        color: grey;
+        font-size: 12px;
+        padding: 20px 0;
+        text-align: right;
+    }
+}

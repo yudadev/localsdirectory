@@ -1,0 +1,55 @@
+<div class="more-cities">
+    <!-- Could split this into its own component and use emitters for communicating filter state changes -->
+    <div class="filters">
+        <h2>Category Filter</h2>
+        <label *ngFor="let category of categories">
+            <input type="checkbox" [(ngModel)]="category.checked" (ngModelChange)="filterChange()" /> {{category.category}} 
+            <br>
+        </label>
+
+        <!-- Assumption: return products equal or better than specified rating -->
+        <h2>Ratings</h2>
+        <label *ngFor="let rating of ratings">
+            <input type="checkbox" [(ngModel)]="rating.checked" (ngModelChange)="filterChange()" /> {{rating.rating}}.0
+            <span [ngClass]="{ 'selected': rating.rating >= 1 }">&#9733;</span>
+            <span [ngClass]="{ 'selected': rating.rating >= 2 }">&#9733;</span>
+            <span [ngClass]="{ 'selected': rating.rating >= 3 }">&#9733;</span>
+            <span [ngClass]="{ 'selected': rating.rating >= 4 }">&#9733;</span>
+            <span [ngClass]="{ 'selected': rating.rating >= 5 }">&#9733;</span>
+            <br>
+        </label>
+
+        <h2>Distance</h2>
+    </div>
+    
+    <div class="search-results">
+        <div class="sort">
+            Arrange By
+            <select #sort (change)="sortBy(sort.value)">
+                <option disabled selected value=""></option>
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+            </select>
+        </div>
+        <div class="product-list">
+            <div *ngFor="let product of products | categoryFilter: categoryFilters | ratingFilter: ratingFilters" class="product">
+                <div class="image">
+                    <img [src]="'../../assets/img/' + product.image" [alt]="product.name">
+                    <div class="rating">{{product.rating}}</div>
+                    <div class="category">
+                        <div *ngFor="let category of product.categories; let last = last;">
+                            {{category}}<span *ngIf="!last">, </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <h3 class="name">{{product.name}}</h3>
+                    <h4 class="address">{{product.address}}</h4>
+                    <p class="description">{{product.description}}</p>
+                    <div class="status open" *ngIf="product.status === 'closed'">Opens Tomorrow at {{product.closeAt}}</div>
+                    <div class="status closed" *ngIf="product.status === 'open'">Open Until {{product.openAt}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

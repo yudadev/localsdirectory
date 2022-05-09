@@ -1,0 +1,45 @@
+nav {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 20px 10px;
+
+    .actions {
+        justify-self: flex-end;
+
+        button {
+            background: transparent;
+            border: none;
+            color: white;
+            display: inline-block;
+            height: 40px;
+            margin-left: 12px;
+
+            &.highlight {
+                background: hotpink;
+                min-width: 125px; 
+            }
+        }
+    }
+
+    .links {
+        flex: 1;
+        margin: 0 50px;
+
+        a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+
+            &.active {
+                color: hotpink;
+            }
+        }
+    }
+
+    .logo {
+        width: 125px;
+    }
+}

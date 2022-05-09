@@ -1,0 +1,72 @@
+h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: normal;
+}
+
+.search {
+    align-items: flex-end;
+    background: rgba(255, 255, 255, 0.5);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+
+    button {
+        background: hotpink;
+        border: none;
+        color: white;
+        min-width: 125px;
+    }
+
+    button,
+    input,
+    select {
+        height: 40px;
+    }
+
+    input,
+    select {
+        border: 1px solid white;
+        background: transparent;
+        color: white;
+        display: block;
+        padding-right: 20px;
+        padding-left: 20px;
+        width: 100%;
+    }
+
+    label {
+        .text {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    }
+
+    option {
+        background: black;
+    }
+
+    .category,
+    .location {
+        flex: 1;
+        margin-right: 30px;
+    }
+
+    ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgb(235, 235, 235);
+        opacity: 1;
+        /* Firefox */
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: rgb(235, 235, 235);
+    }
+
+    ::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: rgb(235, 235, 235);
+    }
+}
